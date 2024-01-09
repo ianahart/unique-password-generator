@@ -5,6 +5,9 @@
 ![JS logo](https://camo.githubusercontent.com/dc9450fb8d40c110f245200f5dadff7551cb6cff83250579789bb997dacf987d/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f7374796c653d666f722d7468652d6261646765266d6573736167653d4a61766153637269707426636f6c6f723d323232323232266c6f676f3d4a617661536372697074266c6f676f436f6c6f723d463744463145266c6162656c3d)
 
 
+![random_password_generator](https://github.com/ianahart/unique-password-generator/assets/29121238/4571e6f9-3446-45f1-a21a-2498e3a7a9e9)
+
+
 
 ### Description
 This password generator takes in and validates the user's preferred password length. It then
