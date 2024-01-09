@@ -5,7 +5,7 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
   var formula = '';
-  var generatePassword = '';
+  var generatedPassword = '';
 
 
   // validation for the password generator
@@ -19,7 +19,7 @@ function generatePassword() {
     passwordLength = prompt('Password length must be between 8 and 128 characters');
   }
 
-  return generatePassword;
+  return generatedPassword;
 }
 
 
