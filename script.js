@@ -4,6 +4,33 @@ var generateBtn = document.querySelector("#generate");
 
 
 
+function createFormula(criteriaAnswers, criteria) {
+  var formula = "";
+
+   // if uppercase is true add all uppercase characters from the criteria obj to the formula
+  if (criteriaAnswers.uppercase) {
+    formula += criteria.uppercase;
+  }
+
+  // if lowercase is true add all lowercase characters from the criteria obj to the formula
+  if (criteriaAnswers.lowercase) {
+    formula += criteria.lowercase;
+  }
+
+  // if numbers is true add all numbers from the criteria obj to the formula
+  if (criteriaAnswers.numbers) {
+    formula += criteria.numbers;
+  }
+
+  // if special chars is true add all special characters from the criteria obj to the formula
+  if (criteriaAnswers.specialChars) {
+    formula += criteria.specialChars;
+  }
+
+  return formula;
+}
+
+
 function askCriteriaQuestions() {
   var uppercase, lowercase, numbers, specialChars;
   uppercase = confirm('Click OK to include uppercase characters?');
@@ -17,7 +44,6 @@ function askCriteriaQuestions() {
 
 
 function generatePassword() {
-  var formula = '';
   var generatedPassword = '';
 
 
@@ -50,6 +76,9 @@ function generatePassword() {
      criteriaAnswers = askCriteriaQuestions();
   }
 
+  var formula = createFormula(criteriaAnswers, criteria);
+
+  console.log(formula)
 
 
   return generatedPassword;
