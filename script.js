@@ -1,8 +1,28 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// generate a random index from the length of the formula string
+// return the formula character at random index
+function getRandomChar(formula) {
+  var randomIndex = Math.floor(Math.random() * formula.length + 1);
+  return formula.charAt(randomIndex);
+}
 
 
+// loop over the criteria keys and check if criteria answer is true,
+// if it is true then append that criteria string to the formula
+function createFormula(criteriaAnswers, criteria) {
+  var formula = "";
+
+  const keys = Object.keys(criteria);
+
+  for (let i = 0; i < keys.length; i++) {
+     if (criteriaAnswers[keys[i]]) {
+      formula += criteria[keys[i]]
+     }
+  }
+  return formula;
+}
 
 function askCriteriaQuestions() {
   var uppercase, lowercase, numbers, specialChars;
@@ -14,12 +34,8 @@ function askCriteriaQuestions() {
   return {uppercase, lowercase, numbers, specialChars};
 }
 
-
-
 function generatePassword() {
-  var formula = '';
   var generatedPassword = '';
-
 
   // validation for the password generator
   var validators = {minLength: 8, maxLength: 128};
@@ -50,7 +66,12 @@ function generatePassword() {
      criteriaAnswers = askCriteriaQuestions();
   }
 
+  var formula = createFormula(criteriaAnswers, criteria);
 
+   // loop over the password length until i is no longer less than the password length
+  for (var i = 0; i < passwordLength; i++) {
+    generatedPassword += getRandomChar(formula);
+  }
 
   return generatedPassword;
 }
